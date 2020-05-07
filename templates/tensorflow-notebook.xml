@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Name>Jupyter Notebook</Name>
+  <Description>Jupyter Notebook with Tensorflow</Description>
+  <Overview>Jupyter Notebook with Tensorflow</Overview>
+  <Registry>https://hub.docker.com/r/jupyter/tensorflow-notebook</Registry>
+  <Repository>jupyter/tensorflow-notebook:latest</Repository>
+  <Privileged>false</Privileged>
+  <Environment/>
+  <Project>https://jupyter.org/</Project>
+  <TemplateURL>https://raw.githubusercontent.com/daergoth/docker-templates/master/templates/tensorflow-notebook.xml</TemplateURL>
+  <Config 
+       Type="Path" 
+       Name="Notebook directory" 
+       Target="/home/jovyan/work" 
+       Default="/mnt/user/appdata/jupyter/notebooks" 
+       Mode="rw" 
+       Description="This is where Jupyter Notebook will store it's notebooks."
+       Required="true">/mnt/user/appdata/jupyter/notebooks</Config>
+  <Config 
+       Type="Port" 
+       Name="Web UI" 
+       Target="8888" 
+       Default="8888" 
+       Mode="tcp" 
+       Description="This is the Web UI Port, and is used to access your Jupyter notebooks." 
+       Display="always" 
+       Required="true">8888</Config>
+  <WebUI>http://[IP]:[PORT:8888]/</WebUI>
+  <ExtraParams/>
+</Container>
