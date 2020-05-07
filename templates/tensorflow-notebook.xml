@@ -10,6 +10,7 @@
   <Network>bridge</Network>
   <Project>https://jupyter.org/</Project>
   <TemplateURL>https://raw.githubusercontent.com/daergoth/docker-templates/master/templates/tensorflow-notebook.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/daergoth/docker-templates/master/templates/icons/tensorflow-notebook.svg</Icon>
   <Config 
        Type="Path" 
        Name="Notebook directory" 
