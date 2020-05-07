@@ -7,6 +7,7 @@
   <Repository>jupyter/tensorflow-notebook:latest</Repository>
   <Privileged>false</Privileged>
   <Environment/>
+  <Network>bridge</Network>
   <Project>https://jupyter.org/</Project>
   <TemplateURL>https://raw.githubusercontent.com/daergoth/docker-templates/master/templates/tensorflow-notebook.xml</TemplateURL>
   <Config 
