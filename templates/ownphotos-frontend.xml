@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Name>Ownphotos Frontend</Name>
+  <Description>Ownphotos Frontend</Description>
+  <Overview>Ownphotos: Self hosted alternative to Google Photos</Overview>
+  <Registry>https://hub.docker.com/r/hooram/ownphotos-frontend/</Registry>
+  <Repository>hooram/ownphotos-frontend:dev</Repository>
+  <Privileged>false</Privileged>
+  <Environment>
+    <Variable>
+      <Name>BACKEND_HOST</Name>
+      <Value>localhost:3000</Value>
+      <Mode/>
+    </Variable>
+    
+  </Environment>
+  <Network>bridge</Network>
+  <Project>https://github.com/hooram/ownphotos-frontend</Project>
+  <TemplateURL>https://raw.githubusercontent.com/daergoth/docker-templates/master/templates/ownphotos-frontend.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/hooram/ownphotos-frontend/dev/screenshots/logo.png</Icon>
+ 
+  <Config 
+       Name="Backend Host address" 
+       Target="BACKEND_HOST" 
+       Default="localhost:3000" 
+       Mode="" 
+       Description="Container Variable: BACKEND_HOST" 
+       Type="Variable" 
+       Display="always" 
+       Required="true" 
+       Mask="false">localhost:3000</Config>
+
+  <Config 
+       Type="Port" 
+       Name="Web UI" 
+       Target="3000" 
+       Default="8081" 
+       Mode="tcp" 
+       Description="This is the Web UI Port, and is used to access PhotoPrism." 
+       Display="always" 
+       Required="true">8081</Config>
+
+  <WebUI>http://[IP]:[PORT:8081]/</WebUI>
+  <ExtraParams/>
+</Container>

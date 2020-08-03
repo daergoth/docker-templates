@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Name>Ownphotos Backend</Name>
+  <Description>Ownphotos Backend</Description>
+  <Overview>Ownphotos: Self hosted alternative to Google Photos</Overview>
+  <Registry>https://hub.docker.com/r/hooram/ownphotos/</Registry>
+  <Repository>hooram/ownphotos:dev</Repository>
+  <Privileged>false</Privileged>
+  <Environment>
+    <Variable>
+      <Name>SECRET_KEY</Name>
+      <Value>CHANGEME</Value>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Name>BACKEND_HOST</Name>
+      <Value>backend</Value>
+      <Mode/>
+    </Variable>
+
+    <Variable>
+      <Name>ADMIN_EMAIL</Name>
+      <Value>admin@example.com</Value>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Name>ADMIN_USERNAME</Name>
+      <Value>admin</Value>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Name>ADMIN_PASSWORD</Name>
+      <Value>ownphotos</Value>
+      <Mode/>
+    </Variable>
+
+    <Variable>
+      <Name>DEBUG</Name>
+      <Value>false</Value>
+      <Mode/>
+    </Variable>
+
+    <Variable>
+      <Name>DB_BACKEND</Name>
+      <Value>postgresql</Value>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Name>DB_NAME</Name>
+      <Value>ownphotos</Value>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Name>DB_USER</Name>
+      <Value>postgres</Value>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Name>DB_PASS</Name>
+      <Value>CHANGEME</Value>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Name>DB_HOST</Name>
+      <Value>ownphotos-db</Value>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Name>DB_PORT</Name>
+      <Value>5432</Value>
+      <Mode/>
+    </Variable>
+    
+    <Variable>
+      <Name>REDIS_HOST</Name>
+      <Value>ownphotos-redis</Value>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Name>REDIS_PORT</Name>
+      <Value>6379</Value>
+      <Mode/>
+    </Variable>
+
+    <Variable>
+      <Name>MAPBOX_API_KEY</Name>
+      <Value>CHANGEME</Value>
+      <Mode/>
+    </Variable>
+
+  </Environment>
+  <Network>bridge</Network>
+  <Project>https://github.com/hooram/ownphotos</Project>
+  <TemplateURL>https://raw.githubusercontent.com/daergoth/docker-templates/master/templates/ownphotos-backend.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/hooram/ownphotos-frontend/dev/screenshots/logo.png</Icon>
+
+  <Config 
+       Name="Secret key" 
+       Target="SECRET_KEY" 
+       Default="CHANGEME" 
+       Mode="" 
+       Description="Container Variable: SECRET_KEY" 
+       Type="Variable" 
+       Display="always" 
+       Required="true" 
+       Mask="false">CHANGEME</Config>
+  <Config 
+       Name="Backend Host address" 
+       Target="BACKEND_HOST" 
+       Default="backend" 
+       Mode="" 
+       Description="Container Variable: BACKEND_HOST" 
+       Type="Variable" 
+       Display="always" 
+       Required="true" 
+       Mask="false">backend</Config>
+  <Config 
+       Name="Admin email address" 
+       Target="ADMIN_EMAIL" 
+       Default="admin@example.com" 
+       Mode="" 
+       Description="Container Variable: ADMIN_EMAIL" 
+       Type="Variable" 
+       Display="always" 
+       Required="true" 
+       Mask="false">admin@example.com</Config>
+  <Config 
+       Name="Admin username" 
+       Target="ADMIN_USERNAME" 
+       Default="admin" 
+       Mode="" 
+       Description="Container Variable: ADMIN_USERNAME" 
+       Type="Variable" 
+       Display="always" 
+       Required="true" 
+       Mask="false">admin</Config>
+  <Config 
+       Name="Admin password" 
+       Target="ADMIN_PASSWORD" 
+       Default="ownphotos" 
+       Mode="" 
+       Description="Container Variable: ADMIN_PASSWORD" 
+       Type="Variable" 
+       Display="always" 
+       Required="true" 
+       Mask="false">ownphotos</Config>
+  <Config 
+       Name="Postgres DB password" 
+       Target="DB_PASS" 
+       Default="CHANGEME" 
+       Mode="" 
+       Description="Container Variable: DB_PASS" 
+       Type="Variable" 
+       Display="always" 
+       Required="true" 
+       Mask="false">CHANGEME</Config>
+  <Config 
+       Name="Postgres DB Host address" 
+       Target="DB_HOST" 
+       Default="ownphotos-db" 
+       Mode="" 
+       Description="Container Variable: DB_HOST" 
+       Type="Variable" 
+       Display="always" 
+       Required="true" 
+       Mask="false">ownphotos-db</Config>
+  <Config 
+       Name="Postgres DB Host port" 
+       Target="DB_PORT" 
+       Default="5432" 
+       Mode="" 
+       Description="Container Variable: DB_PORT" 
+       Type="Variable" 
+       Display="always" 
+       Required="true" 
+       Mask="false">5432</Config>
+
+  <Config 
+       Name="Redis Host address" 
+       Target="REDIS_HOST" 
+       Default="ownphotos-redis" 
+       Mode="" 
+       Description="Container Variable: REDIS_HOST" 
+       Type="Variable" 
+       Display="always" 
+       Required="true" 
+       Mask="false">ownphotos-redis</Config>
+  <Config 
+       Name="Redis Host port" 
+       Target="REDIS_PORT" 
+       Default="6379" 
+       Mode="" 
+       Description="Container Variable: REDIS_PORT" 
+       Type="Variable" 
+       Display="always" 
+       Required="true" 
+       Mask="false">6379</Config>
+
+  <Config 
+       Name="MapBox API key" 
+       Target="MAPBOX_API_KEY" 
+       Default="CHANGEME" 
+       Mode="" 
+       Description="Container Variable: MAPBOX_API_KEY" 
+       Type="Variable" 
+       Display="always" 
+       Required="true" 
+       Mask="false">CHANGEME</Config>
+
+  <Config 
+       Type="Path" 
+       Name="Originals directory" 
+       Target="/data" 
+       Default="/mnt/user/appdata/ownphotos/photos" 
+       Mode="rw" 
+       Description="This is where Ownphotos will store its originals."
+       Required="true">/mnt/user/appdata/ownphotos/photos</Config>
+  <Config 
+       Type="Path" 
+       Name="Thumbnail directory" 
+       Target="/code/protected_media" 
+       Default="/mnt/user/appdata/ownphotos/thumbnails" 
+       Mode="rw" 
+       Description="This is where Ownphotos will store its thumbnails."
+       Required="true">/mnt/user/appdata/ownphotos/thumbnails</Config>
+  <Config 
+       Type="Path" 
+       Name="Logs directory" 
+       Target="/code/logs" 
+       Default="/mnt/user/appdata/ownphotos/logs" 
+       Mode="rw" 
+       Description="This is where Ownphotos will store its logs."
+       Required="true">/mnt/user/appdata/ownphotos/logs</Config>
+  <Config 
+       Type="Port" 
+       Name="API port" 
+       Target="80" 
+       Default="8080" 
+       Mode="tcp" 
+       Description="This is the API Port, and is used to access Ownphotos backend." 
+       Display="always" 
+       Required="true">8080</Config>
+
+  <ExtraParams/>
+</Container>
